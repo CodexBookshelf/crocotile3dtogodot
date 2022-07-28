@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://obj/test.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://obj/texture_2.png" type="Texture" id=2]
+[ext_resource path="res://obj/texture_0.png" type="Texture" id=3]
+[ext_resource path="res://obj/obj.gd" type="Script" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=2]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+
+[node name="obj" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+script = ExtResource( 4 )
+uvAnimationFile = "res://obj/uvAnimation.txt"
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.941176, 0.337917, 0, -0.337917, 0.941176, 0, 3.30706, 9.04509 )

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tiles.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://GridMap.gd" type="Script" id=2]
+[ext_resource path="res://meshLoader.gd" type="Script" id=3]
+[ext_resource path="res://CharacterSprite.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 1, 1, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21901, 6.37565, 4.2525 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.904045, 0.427437, 0, -0.427437, 0.904045, 4.54649, 4.78274, 11.6158 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, -1610612736, 1, 0, -1610612736, 2, 0, -1610612736, 3, 0, -1610612736, 4, 0, -1610612736, 5, 0, -1610612736, 6, 0, -1610612736, 7, 0, -1610612736, 8, 0, -1610612736, 9, 0, -1610612736, 10, 0, -1610612736, 11, 0, -1610612736, 12, 0, -1610612736, 13, 0, -1610612736, 14, 0, -1610612736, 15, 0, -1610612736, 16, 0, -1610612736, 17, 0, -1610612736, 18, 0, -1610612736, 65536, 0, -1610612736, 65542, 0, -1610612736, 65543, 0, -1610612736, 65544, 0, -1610612736, 65554, 0, -1610612736, 131072, 0, -1610612736, 131078, 0, -1610612736, 131079, 0, -1610612736, 131080, 0, -1610612736, 131090, 0, -1610612736, 196608, 0, -1610612736, 196626, 0, -1610612736, 262144, 0, -1610612736, 262159, 0, -1610612736, 262160, 0, -1610612736, 262161, 0, -1610612736, 262162, 0, -1610612736, 327680, 0, -1610612736, 327698, 0, -1610612736, 393216, 0, -1610612736, 393234, 0, -1610612736, 458752, 0, -1610612736, 458770, 0, -1610612736, 6, 3, -1610612736, 6, 4, -1610612736, 7, 4, -1610612736, 8, 4, -1610612736, 9, 4, -1610612736, 10, 4, -1610612736, 11, 4, -1610612734, 6, 5, -1610612736, 7, 5, -1610612736, 8, 5, -1610612736, 9, 5, -1610612736, 10, 5, -1610612736, 11, 5, -1610612734, 6, 6, -1610612736, 7, 6, -1610612736, 8, 6, -1610612736, 9, 6, -1610612736, 10, 6, -1610612736, 11, 6, -1610612734, 6, 7, -1610612736, 7, 7, -1610612736, 8, 7, -1610612736, 9, 7, -1610612736, 10, 7, -1610612736, 11, 7, -1610612734, 4, 8, -1610612735, 5, 8, -1610612736, 6, 8, -1610612736, 7, 8, -1610612736, 8, 8, -1610612736, 9, 8, -1610612736, 10, 8, -1610612736, 11, 8, -1610612734, 4, 9, -1610612735, 5, 9, -1610612736, 6, 9, -1610612736, 7, 9, -1610612736, 8, 9, -1610612736, 9, 9, -1610612734 )
+}
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_clip_": 0
+}
+mapFile = "res://levels/testLevel/cells.txt"
+
+[node name="meshLoader" type="Node" parent="."]
+script = ExtResource( 3 )
+meshFile = "res://levels/testLevel/model/testLevel.obj"
+uvAnimationFile = "res://levels/testLevel/model/uvAnimation.txt"
+
+[node name="CharacterSprite" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42779, 8.46947, 2.97766 )

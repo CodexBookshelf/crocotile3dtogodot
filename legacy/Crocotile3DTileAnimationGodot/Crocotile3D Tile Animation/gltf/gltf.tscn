@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gltf/gltf.gd" type="Script" id=1]
+[ext_resource path="res://gltf/test.gltf" type="PackedScene" id=2]
+
+[node name="gltf" instance=ExtResource( 2 )]
+
+[node name="Mesh2" parent="." index="0"]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 0.941176, 0.337917, 0, -0.337917, 0.941176, 0, 3.30706, 9.04509 )

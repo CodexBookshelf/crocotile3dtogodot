@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sceneObj/waterfall.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://sceneObj/texture_1.png" type="Texture" id=2]
+[ext_resource path="res://obj/obj.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 2 )
+
+[node name="sceneObj" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+script = ExtResource( 3 )
+uvAnimationFile = "res://sceneObj/uvAnimation.txt"
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.426821, -0.305591, 0.851139, 0, 0.941176, 0.337917, -0.904336, -0.14423, 0.401714, 9.31442, 5.7301, 6.04742 )
