@@ -1,0 +1,37 @@
+ 
+# Godot-specific ignores
+
+./legacy/Crocotile3DGridMapGodot/Crocotile3D Grid Map/.import/
+./legacy/Crocotile3DGridMapGodot/Crocotile3D Grid Map/export.cfg
+./legacy/Crocotile3DGridMapGodot/Crocotile3D Grid Map/export_presets.cfg
+
+./legacy/Crocotile3DSpriteAnimationGodot/Crocotile3D Sprite Animation/.import/
+./legacy/Crocotile3DSpriteAnimationGodot/Crocotile3D Sprite Animation/export.cfg
+./legacy/Crocotile3DSpriteAnimationGodot/Crocotile3D Sprite Animation/export_presets.cfg
+
+./legacy/Crocotile3DTileAnimationGodot/Crocotile3D Tile Animation/.import/
+./legacy/Crocotile3DTileAnimationGodot/Crocotile3D Tile Animation/export.cfg
+./legacy/Crocotile3DTileAnimationGodot/Crocotile3D Tile Animation/export_presets.cfg
+
+./FPS*test/Grid*Map*fps*TEST/.import/
+./FPS*test/Grid*Map*fps*TEST/export.cfg
+./FPS*test/Grid*Map*fps*TEST/export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+./legacy/Crocotile3DGridMapGodot/Crocotile3D Grid Map/translation
+./legacy/Crocotile3DSpriteAnimationGodot/Crocotile3D Sprite Animation/translation
+./legacy/Crocotile3DTileAnimationGodot/Crocotile3D Tile Animation/translation
+./FPS*test/Grid*Map*fps*TEST/translation
+
+# Mono-specific ignores
+./legacy/Crocotile3DGridMapGodot/Crocotile3D Grid Map/mono/
+./legacy/Crocotile3DGridMapGodot/Crocotile3D Grid Map/data_*/
+
+./legacy/Crocotile3DSpriteAnimationGodot/Crocotile3D Sprite Animation/mono/
+./legacy/Crocotile3DSpriteAnimationGodot/Crocotile3D Sprite Animation/data_*/
+
+./legacy/Crocotile3DTileAnimationGodot/Crocotile3D Tile Animation/mono/
+./legacy/Crocotile3DTileAnimationGodot/Crocotile3D Tile Animation/data_*/
+
+./FPS*test/Grid*Map*fps*TEST/mono/
+./FPS*test/Grid*Map*fps*TEST/data_*/
