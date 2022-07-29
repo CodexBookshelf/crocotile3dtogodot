@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tiles.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://GridMap.gd" type="Script" id=2]
+[ext_resource path="res://meshLoader.gd" type="Script" id=3]
+[ext_resource path="res://player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 1, 1, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21901, 6.37565, 4.2525 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 65536, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65554, 0, 0, 131072, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131090, 0, 0, 196608, 0, 0, 196626, 0, 0, 262144, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 327680, 0, 0, 327698, 0, 0, 393216, 0, 0, 393234, 0, 0, 458752, 0, 0, 458770, 0, 0, 6, 3, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 2, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 5, 2, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 2, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 2, 4, 8, 1, 5, 8, 0, 6, 8, 0, 7, 8, 0, 8, 8, 0, 9, 8, 0, 10, 8, 0, 11, 8, 2, 4, 9, 1, 5, 9, 0, 6, 9, 0, 7, 9, 0, 8, 9, 0, 9, 9, 2 )
+}
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_clip_": 0
+}
+mapFile = "res://levels/testLevel/cells.txt"
+
+[node name="meshLoader" type="Node" parent="."]
+script = ExtResource( 3 )
+meshFile = "res://levels/testLevel/model/testLevel.obj"
+uvAnimationFile = "res://levels/testLevel/model/uvAnimation.txt"
+
+[node name="player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77589, 5.29101, 4.39812 )
